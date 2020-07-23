@@ -1,22 +1,22 @@
 terraform {
   backend "remote" {
-    organization = "Cloud-Org"
+    organization = "Linear-Logic-Concept"
 
     workspaces {
-      name = "Dev-QA"
+      name = "TerraformCloud"
     }
   }
 }
 
 provider "azurerm"{
     version ="~>1.32.0"
-    #use_msi =true
-    #tenant_id ="79543c3e-560a-4b69-ad1b-7fd4516168e8"
-    #subscription_id ="3e6c4ee8-00ee-4546-b190-772547d3a510"
+    use_msi =true
+    tenant_id ="79543c3e-560a-4b69-ad1b-7fd4516168e8"
+    subscription_id ="3e6c4ee8-00ee-4546-b190-772547d3a510"
 }
 
 resource "azurerm_resource_group" "rg"{
-    name = "EntepAch"
+    name = "EntepAch2"
     location = "west europe"
 
     tags = {
